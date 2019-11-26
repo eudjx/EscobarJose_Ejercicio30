@@ -1,11 +1,28 @@
-diff.png : Ex29.py Ex29.dat
-	python Ex29.py
+all: evolve_A.png evolve_B.png evolve_C.png
 
-Ex29.dat : Ex29.x
-	./Ex29.x > Ex29.dat
+evolve_A.png: evolve_30_450.dat evolve_31_450.dat evolve_29_450.dat evolve_30_440.dat plot.py
+	python plot.py
 
-Ex29.x : Ex29.cpp
-	c++ Ex29.cpp -o Ex29.x
-	
+evolve_B.png: evolve_30_450.dat evolve_31_450.dat evolve_29_450.dat evolve_30_440.dat plot.py
+	python plot.py
+
+evolve_C.png: evolve_30_450.dat evolve_31_450.dat evolve_29_450.dat evolve_30_440.dat plot.py
+	python plot.py
+
+evolve_30_450.dat : evolve.x
+	./evolve.x 30 450 > evolve_30_450.dat
+
+evolve_31_450.dat : evolve.x
+	./evolve.x 31 450 > evolve_31_450.dat
+
+evolve_29_450.dat : evolve.x
+	./evolve.x 29 450 > evolve_29_450.dat
+
+evolve_30_440.dat : evolve.x
+	./evolve.x 30 440 > evolve_30_440.dat
+
+evolve.x : evolve.cpp
+	c++ evolve.cpp -o evolve.x
+
 clean:
-	rm Ex29.x Ex29.dat diff.png
+	rm evolve.x *.dat *.png
