@@ -1,4 +1,4 @@
-/* Código tomado de mi repositorio, ejercicio 29.
+/* Código tomado de mi repositorio, ejercicio 29.*/
 
 #include <iostream>
 #include <cmath>
